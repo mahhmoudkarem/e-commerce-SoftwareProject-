@@ -16,7 +16,22 @@ namespace e_commerce_SoftwareProject_
         {
             InitializeComponent();
         }
+        //to show subform form in mainform
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            mainPanel.Controls.Add(childForm);
+            mainPanel.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
 
+        }
         private void MainForm_Load(object sender, EventArgs e)
         {
 
@@ -44,7 +59,7 @@ namespace e_commerce_SoftwareProject_
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-
+           openChildForm(new UserFrom());
         }
 
         private void iconExit_Click(object sender, EventArgs e)
@@ -53,6 +68,11 @@ namespace e_commerce_SoftwareProject_
             {
                 Application.Exit();
             }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

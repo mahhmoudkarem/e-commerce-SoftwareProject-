@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.iconExit = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.formUserName = new System.Windows.Forms.TextBox();
@@ -41,18 +42,44 @@
             this.ClearBtn = new System.Windows.Forms.Button();
             this.UpdateBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
+            this.formRepass = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Navy;
+            this.panel1.Controls.Add(this.iconExit);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(683, 45);
             this.panel1.TabIndex = 0;
+            // 
+            // iconExit
+            // 
+            this.iconExit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.iconExit.BackColor = System.Drawing.Color.Navy;
+            this.iconExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconExit.ForeColor = System.Drawing.Color.Navy;
+            this.iconExit.IconChar = FontAwesome.Sharp.IconChar.SquareXmark;
+            this.iconExit.IconColor = System.Drawing.Color.Red;
+            this.iconExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconExit.IconSize = 30;
+            this.iconExit.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.iconExit.Location = new System.Drawing.Point(652, -7);
+            this.iconExit.Margin = new System.Windows.Forms.Padding(0);
+            this.iconExit.Name = "iconExit";
+            this.iconExit.Padding = new System.Windows.Forms.Padding(0, 0, 0, 30);
+            this.iconExit.Size = new System.Drawing.Size(37, 42);
+            this.iconExit.TabIndex = 14;
+            this.iconExit.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.iconExit.UseVisualStyleBackColor = false;
+            this.iconExit.Click += new System.EventHandler(this.iconExit_Click);
             // 
             // label1
             // 
@@ -86,7 +113,7 @@
             // 
             // formFullName
             // 
-            this.formFullName.Location = new System.Drawing.Point(199, 134);
+            this.formFullName.Location = new System.Drawing.Point(199, 128);
             this.formFullName.Name = "formFullName";
             this.formFullName.Size = new System.Drawing.Size(407, 26);
             this.formFullName.TabIndex = 6;
@@ -95,7 +122,7 @@
             // 
             this.FullName.AutoSize = true;
             this.FullName.Font = new System.Drawing.Font("Elephant", 9.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FullName.Location = new System.Drawing.Point(36, 133);
+            this.FullName.Location = new System.Drawing.Point(36, 127);
             this.FullName.Name = "FullName";
             this.FullName.Size = new System.Drawing.Size(131, 26);
             this.FullName.TabIndex = 5;
@@ -103,7 +130,7 @@
             // 
             // formPassword
             // 
-            this.formPassword.Location = new System.Drawing.Point(199, 185);
+            this.formPassword.Location = new System.Drawing.Point(199, 176);
             this.formPassword.Name = "formPassword";
             this.formPassword.Size = new System.Drawing.Size(407, 26);
             this.formPassword.TabIndex = 8;
@@ -112,7 +139,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Elephant", 9.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(36, 184);
+            this.label4.Location = new System.Drawing.Point(36, 175);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 26);
             this.label4.TabIndex = 7;
@@ -120,7 +147,7 @@
             // 
             // formPhone
             // 
-            this.formPhone.Location = new System.Drawing.Point(199, 234);
+            this.formPhone.Location = new System.Drawing.Point(199, 263);
             this.formPhone.Name = "formPhone";
             this.formPhone.Size = new System.Drawing.Size(407, 26);
             this.formPhone.TabIndex = 10;
@@ -129,7 +156,7 @@
             // 
             this.Phone.AutoSize = true;
             this.Phone.Font = new System.Drawing.Font("Elephant", 9.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Phone.Location = new System.Drawing.Point(36, 233);
+            this.Phone.Location = new System.Drawing.Point(36, 262);
             this.Phone.Name = "Phone";
             this.Phone.Size = new System.Drawing.Size(87, 26);
             this.Phone.TabIndex = 9;
@@ -141,12 +168,13 @@
             this.ClearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ClearBtn.Font = new System.Drawing.Font("Elephant", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClearBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.ClearBtn.Location = new System.Drawing.Point(553, 303);
+            this.ClearBtn.Location = new System.Drawing.Point(553, 314);
             this.ClearBtn.Name = "ClearBtn";
             this.ClearBtn.Size = new System.Drawing.Size(92, 42);
             this.ClearBtn.TabIndex = 11;
             this.ClearBtn.Text = "Clear";
             this.ClearBtn.UseVisualStyleBackColor = false;
+            this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
             // 
             // UpdateBtn
             // 
@@ -154,12 +182,13 @@
             this.UpdateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UpdateBtn.Font = new System.Drawing.Font("Elephant", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.UpdateBtn.Location = new System.Drawing.Point(455, 303);
+            this.UpdateBtn.Location = new System.Drawing.Point(455, 314);
             this.UpdateBtn.Name = "UpdateBtn";
             this.UpdateBtn.Size = new System.Drawing.Size(92, 42);
             this.UpdateBtn.TabIndex = 12;
             this.UpdateBtn.Text = "Update";
             this.UpdateBtn.UseVisualStyleBackColor = false;
+            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
             // saveBtn
             // 
@@ -167,18 +196,38 @@
             this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveBtn.Font = new System.Drawing.Font("Elephant", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.saveBtn.Location = new System.Drawing.Point(357, 303);
+            this.saveBtn.Location = new System.Drawing.Point(357, 314);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(92, 42);
             this.saveBtn.TabIndex = 13;
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = false;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
+            // formRepass
+            // 
+            this.formRepass.Location = new System.Drawing.Point(199, 219);
+            this.formRepass.Name = "formRepass";
+            this.formRepass.Size = new System.Drawing.Size(407, 26);
+            this.formRepass.TabIndex = 15;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Elephant", 9.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(36, 218);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(149, 26);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "RePassword :";
             // 
             // UserModuleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 370);
+            this.Controls.Add(this.formRepass);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.UpdateBtn);
             this.Controls.Add(this.ClearBtn);
@@ -207,15 +256,18 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox formUserName;
-        private System.Windows.Forms.TextBox formFullName;
         private System.Windows.Forms.Label FullName;
-        private System.Windows.Forms.TextBox formPassword;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox formPhone;
         private System.Windows.Forms.Label Phone;
-        private System.Windows.Forms.Button ClearBtn;
-        private System.Windows.Forms.Button UpdateBtn;
-        private System.Windows.Forms.Button saveBtn;
+        private FontAwesome.Sharp.IconButton iconExit;
+        public System.Windows.Forms.Button ClearBtn;
+        public System.Windows.Forms.Button UpdateBtn;
+        public System.Windows.Forms.Button saveBtn;
+        public System.Windows.Forms.TextBox formUserName;
+        public System.Windows.Forms.TextBox formFullName;
+        public System.Windows.Forms.TextBox formPassword;
+        public System.Windows.Forms.TextBox formPhone;
+        public System.Windows.Forms.TextBox formRepass;
+        private System.Windows.Forms.Label label3;
     }
 }
